@@ -1,7 +1,9 @@
-managed;
+managed implementation in class zbp_movie unique;
+strict( 2 );
 
 define behavior for ZI_22_Movie //alias <alias_name>
 persistent table zabap_movie_a
+authorization master (instance)
 lock master
 
 {
@@ -29,6 +31,7 @@ lock master
 
 define behavior for ZI_22_Rating //alias <alias_name>
 persistent table zabap_rating_a
+authorization dependent by _Movie
 lock dependent by _Movie
 
 {

@@ -1,7 +1,8 @@
 projection;
+strict( 2 );
 
 
-define behavior for ZC_22_Movie //alias <alias_name>
+define behavior for ZC_22_Movie
 {
   use create;
   use update;

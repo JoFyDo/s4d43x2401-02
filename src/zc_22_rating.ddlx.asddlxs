@@ -32,6 +32,11 @@ annotate view ZC_22_Rating with
   @UI.lineItem: [{ position: 30 }]
   @UI.fieldGroup: [{ qualifier: 'AData', position: 30 }]
   RatingDate;
+  
+  @UI.lineItem: [{ position: 40 }]
+  Genre;
+  
+
 
 
   /* Associations */

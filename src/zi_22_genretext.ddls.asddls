@@ -5,6 +5,7 @@
 define view entity ZI_22_GenreText
   as select from zabap_movie_a
 {
+  movie_uuid as MovieUUID,
   genre as Genre
 
 }

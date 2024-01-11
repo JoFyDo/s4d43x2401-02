@@ -3,6 +3,7 @@
 @Search.searchable: true
 @Metadata.allowExtensions: true
 define root view entity ZC_22_Movie
+  provider contract transactional_query
   as projection on ZI_22_Movie
 {
   key MovieUUID,
@@ -21,6 +22,10 @@ define root view entity ZC_22_Movie
       LastChangedAt,
       @Semantics.user.localInstanceLastChangedBy: true
       LastChangedBy,
+      RatingAvg,
+      DescriptionFilmLength,
+      RatingColor,
+      
       
       _Ratings : redirected to composition child ZC_22_Rating
      

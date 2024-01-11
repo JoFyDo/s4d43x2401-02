@@ -51,5 +51,8 @@ annotate view ZC_22_Movie with
 
   @UI.fieldGroup: [{ qualifier: 'Data', position: 50 }]
   LastChangedBy;
+  
+  @UI.lineItem: [{ position: 50, criticality: 'RatingColor', criticalityRepresentation: #WITHOUT_ICON }]
+  RatingAvg;
 
 }
