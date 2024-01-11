@@ -1,0 +1,55 @@
+@Metadata.layer: #CUSTOMER
+@UI.headerInfo:
+{
+  typeNamePlural: 'Movies',
+  title.value: 'Title',
+  description.value: 'PublishingYear',
+  imageUrl: 'ImageUrl'
+}
+annotate view ZC_22_Movie with
+{
+
+  @UI.facet:
+  [
+  {position: 10, label: 'Movie Details', type: #FIELDGROUP_REFERENCE, targetQualifier: 'Details' },
+  {position: 20, label: 'Administrative Data', type: #FIELDGROUP_REFERENCE, targetQualifier: 'Data' },
+  {position: 30, label: 'Ratings', type: #LINEITEM_REFERENCE, targetElement: '_Ratings'}
+   ]
+  @UI.fieldGroup: [{ qualifier: 'Data', position: 10 }]
+  MovieUUID;
+
+  @UI.lineItem: [{ position: 10 }]
+  @UI.fieldGroup: [{ qualifier: 'Details', position: 10 }]
+  Title;
+
+  @UI.selectionField: [{ position: 10 }]
+  @UI.lineItem: [{ position: 20 }]
+  @UI.fieldGroup: [{ qualifier: 'Details', position: 20 }]
+  Genre;
+
+  @UI.selectionField: [{ position: 20 }]
+  @UI.lineItem: [{ position: 30 }]
+  @UI.fieldGroup: [{ qualifier: 'Details', position: 30 }]
+  PublishingYear;
+
+  @UI.selectionField: [{ position: 30 }]
+  @UI.lineItem: [{ position: 40 }]
+  @UI.fieldGroup: [{ qualifier: 'Details', position: 40 }]
+  RuntimeInMin;
+
+  @UI.fieldGroup: [{ qualifier: 'Details', position: 50 }]
+  ImageUrl;
+
+  @UI.fieldGroup: [{ qualifier: 'Data', position: 20 }]
+  CreatedAt;
+
+  @UI.fieldGroup: [{ qualifier: 'Data', position: 30 }]
+  CreatedBy;
+
+  @UI.fieldGroup: [{ qualifier: 'Data', position: 40 }]
+  LastChangedAt;
+
+  @UI.fieldGroup: [{ qualifier: 'Data', position: 50 }]
+  LastChangedBy;
+
+}

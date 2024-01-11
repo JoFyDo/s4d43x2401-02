@@ -1,0 +1,48 @@
+managed;
+
+define behavior for ZI_22_Movie //alias <alias_name>
+persistent table zabap_movie_a
+lock master
+
+{
+  create;
+  update;
+  delete;
+  association _Ratings { create; }
+
+  field (numbering : managed) MovieUUID;
+  field (readonly) MovieUUID;
+
+  mapping for zabap_movie_a corresponding{
+  MovieUUID = movie_uuid;
+  Title = title;
+  Genre = genre;
+  PublishingYear = publishing_year;
+  RuntimeInMin = runtime_in_min;
+  ImageUrl = image_url;
+  CreatedAt = created_at;
+  CreatedBy = created_by;
+  LastChangedAt = last_changed_at;
+  LastChangedBy = last_changed_by;
+}
+}
+
+define behavior for ZI_22_Rating //alias <alias_name>
+persistent table zabap_rating_a
+lock dependent by _Movie
+
+{
+  update;
+  delete;
+  field(numbering : managed) RatingUUID;
+  field ( readonly ) MovieUUID, RatingUUID;
+  association _Movie;
+
+  mapping for zabap_rating_a corresponding{
+  RatingUUID = rating_uuid;
+  MovieUUID = movie_uuid;
+  UserName = user_name;
+  Rating = rating;
+  RatingDate = rating_date;
+  }
+}
