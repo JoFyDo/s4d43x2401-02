@@ -12,6 +12,8 @@ define view entity ZI_22_Rating
       user_name        as UserName,
       rating           as Rating,
       rating_date      as RatingDate,
+      
+      
 
 
       _Movie,

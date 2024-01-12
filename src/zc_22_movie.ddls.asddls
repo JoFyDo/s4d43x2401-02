@@ -10,7 +10,9 @@ define root view entity ZC_22_Movie
       @Search.defaultSearchElement: true
       @Search.fuzzinessThreshold: 0.7
       Title,
+      @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_22_GenreVH', element: 'Genre' } }]
       Genre,
+      @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_22_PublishingYearVH', element: 'PublishingYear' } }]
       PublishingYear,
       RuntimeInMin,
       ImageUrl,
